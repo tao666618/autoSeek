@@ -1,66 +1,13 @@
 [
   {
-    "url": "https://api.vanse.top/api/v1/mcx",
-    "name": "柠檬题库",
-    "homepage": "https://www.lemtk.xyz",
-    "method": "post",
-    "contentType": "json",
-    "type": "GM_xmlhttpRequest",
-    "headers": {
-      "Authorization": "Bearer 695f332031792a3822ffe762f66ec376"
-    },
-    "data": {
-      "v": "2025-02-26",
-      "uid": "3362045398@qq.com",
-      "question": "${title}",
-      "options": {
-        "handler": "return (env) => {\n                                if (env.options) {\n                                    return env.options.replaceAll(\"\\n\", \"|\");\n                                }\n                            }"
-      },
-      "type": {
-        "handler": "return (env) => {\n                                    return env.type === 'single' ? \"0\" : \n                                    env.type === 'multiple' ? \"1\" :\n                                    env.type === 'judgement' ? \"3\" : \n                                    env.type === 'completion' ? \"2\" : \"6\"\n                            }"
-      }
-    },
-    "handler": "return (res)=> res.code === 1000 ? [undefined, res.data.answer] : [res.msg, undefined]"
-  },
-  {
-    "name": "言溪题库",
-    "homepage": "https://tk.enncy.cn/",
-    "url": "https://tk.enncy.cn/query",
-    "method": "get",
-    "type": "GM_xmlhttpRequest",
-    "contentType": "json",
-    "data": {
-      "token": "7eb08064083f469f91957bc66dbb6528",
-      "title": "${title}",
-      "options": "${options}",
-      "type": "${type}"
-    },
-    "handler": "return (res)=>res.code === 0 ? [res.data.answer, undefined] : [res.data.question,res.data.answer]"
-  },
-  {
-    "name": "网课小工具题库（GO题）",
-    "homepage": "https://cx.icodef.com/",
-    "url": "https://cx.icodef.com/wyn-nb?v=4",
-    "method": "post",
-    "type": "GM_xmlhttpRequest",
-    "data": {
-      "question": "${title}"
-    },
-    "headers": {
-      "Content-Type": "application/x-www-form-urlencoded",
-      "Authorization": ""
-    },
-    "handler": "return  (res)=> res.code === 1 ? [undefined,res.data] : [res.msg,undefined]"
-  },
-  {
     "name": "测试题库",
     "homepage": "https://tk.enncy.cn/",
-    "url": "http://127.0.0.1:8080/getData",
+    "url": "http://1.94.168.250:8083/getData",
     "method": "get",
     "type": "GM_xmlhttpRequest",
     "contentType": "json",
     "data": {
-      "tocken" :"涛最帅",
+      "tocken": "涛最帅",
       "title": "${title}",
       "options": "${options}",
       "type": "${type}"
