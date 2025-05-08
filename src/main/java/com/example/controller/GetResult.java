@@ -20,7 +20,7 @@ public class GetResult {
     // 接受前端传来的get请求数据
     @GetMapping("getData")
     public result getData(@RequestParam String title,
-                          @RequestParam(required = false) String type,
+//                          @RequestParam(required = false) String type,
                           @RequestParam(required = false) String options
                           ) {
 
@@ -34,9 +34,9 @@ public class GetResult {
         // 2. 组装要发给 deepseek 的完整问题
         StringBuilder dataBuilder = new StringBuilder();
         dataBuilder.append(title.trim());
-        if (type != null && !type.trim().isEmpty()) {
-            dataBuilder.append("（类型：").append(type.trim()).append("）");
-        }
+//        if (type != null && !type.trim().isEmpty()) {
+//            dataBuilder.append("（类型：").append(type.trim()).append("）");
+//        }
         // 处理选项
         if (options != null && !options.trim().isEmpty()) {
             StringBuilder optionBuilder = new StringBuilder();
@@ -55,7 +55,7 @@ public class GetResult {
         }
 
         String userMessage = dataBuilder.toString();
-        System.out.println("userMessage = " + userMessage);
+        System.out.println("userMessage1 = " + userMessage);
 
         // 3. 调用 deepseek
         String apiResponse = deepSeekService.getChatCompletion(userMessage);

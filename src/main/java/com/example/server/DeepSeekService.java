@@ -16,7 +16,7 @@ public class DeepSeekService {
     }
 
     public String getChatCompletion(String userMessage) {
-        System.out.println("userMessage = " + userMessage);
+//        System.out.println("userMessage = " + userMessage);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("Authorization", "Bearer " + apiKey);
@@ -25,16 +25,16 @@ public class DeepSeekService {
         {
             "model": "deepseek-chat",
             "messages": [
-                {"role": "system", "content": "请直接给出以下题目的答案，不需要解释或步骤。"},
+                {"role": "system", "content": "请直接给出以下题目的答案，不需要解释或步骤。输出结果仅包含汉字和字母以及必要的标点符号"},
                 {"role": "user", "content": "%s"}
             ],
             "stream": false
         }
         """, userMessage);
-
+        System.out.println("requestBody 发送的请求体 = " + requestBody);
         HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
         ResponseEntity<String> response = restTemplate.postForEntity(apiUrl, request, String.class);
-
+        System.out.println("response  =  " + response);
         return response.getBody();
     }
 }
