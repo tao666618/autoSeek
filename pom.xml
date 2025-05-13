@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.tao</groupId>
-    <artifactId>demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>demo</description>
+    <artifactId>autoSeek</artifactId>
+    <version>0.0.5</version>
+    <name>autoSeek</name>
+    <description>自动答题接口</description>
     <url/>
     <licenses>
         <license/>
