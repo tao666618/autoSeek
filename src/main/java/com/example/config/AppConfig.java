@@ -1,5 +1,6 @@
 package com.example.config;
 import com.example.server.DeepSeekService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +21,11 @@ public class AppConfig {
     }
 
     @Bean
+    public ObjectMapper objectMapper() {
+        return new ObjectMapper();
+    }
+    @Bean
     public DeepSeekService deepSeekService(RestTemplate restTemplate) {
-        return new DeepSeekService(restTemplate, apiUrl, apiKey);
+        return new DeepSeekService(restTemplate, apiUrl, apiKey, objectMapper());
     }
 }

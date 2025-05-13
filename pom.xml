@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.tao</groupId>
     <artifactId>autoSeek</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.7</version>
     <name>autoSeek</name>
     <description>自动答题接口</description>
     <url/>
